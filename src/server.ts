@@ -4,6 +4,7 @@ import cors from 'cors';
 import dotenv from 'dotenv';
 import prisma from './PrismaClient'; // Import the Prisma client
 
+
 // Load environment variables
 dotenv.config();
 

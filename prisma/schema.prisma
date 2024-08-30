@@ -19,8 +19,6 @@ model User {
   email       String   @unique
   password    String
   username    String?  @unique
-  role        Role     @default(REPRESENTATIVE) 
-  createdAt   DateTime @default(now())
-  updatedAt   DateTime @updatedAt
+  role        Role     @default(REPRESENTATIVE)
 
 }
