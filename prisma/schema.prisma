@@ -1,0 +1,26 @@
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mongodb"
+  url      = env("DATABASE_URL")
+}
+
+// Define the Role enum
+enum Role {
+  REPRESENTATIVE
+  AID_PROVIDER
+}
+
+model User {
+  id          String   @id @default(auto())  @map("_id") @db.ObjectId
+  email       String   @unique
+  password    String
+  username    String?  @unique
+  role        Role     @default(REPRESENTATIVE) 
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+}

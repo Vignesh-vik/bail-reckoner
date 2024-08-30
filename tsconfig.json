@@ -1,12 +1,15 @@
 {
   "compilerOptions": {
+    "target": "ES6", // ES6 or later to use modern JavaScript features // Use ESNext or ES6 to enable ES modules // Module resolution strategy
     "lib": ["dom", "dom.iterable", "esnext"],
+    "outDir": "./dist", // Output directory for compiled JavaScript files
+    "rootDir": "./src", // Source directory for TypeScript files
     "allowJs": true,
     "skipLibCheck": true,
     "strict": true,
     "noEmit": true,
     "esModuleInterop": true,
-    "module": "esnext",
+    "module": "ESnext",
     "moduleResolution": "bundler",
     "resolveJsonModule": true,
     "isolatedModules": true,
@@ -21,6 +24,10 @@
       "@/*": ["./src/*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
-  "exclude": ["node_modules"]
+  "include": [
+    "next-env.d.ts",
+    "src/**/*.ts",
+    "src/server.ts"
+  ],
+  "exclude": ["node_modules", "dist"]
 }
